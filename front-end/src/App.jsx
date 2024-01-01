@@ -1,7 +1,15 @@
+import { Container } from 'react-bootstrap';
+import { MainHeader, Footer } from './components/index.js';
 function App() {
   return (
     <>
-      <h1>welcome to CineHaven</h1>
+      <MainHeader />
+      <main className="py-3">
+        <Container>
+          <h1>Welcome To CineHaven</h1>
+        </Container>
+      </main>
+      <Footer />
     </>
   );
 }
