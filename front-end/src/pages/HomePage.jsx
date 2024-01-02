@@ -1,6 +1,6 @@
 import { Row, Col } from 'react-bootstrap';
-import blurays from './../data/blu-ray';
-import { Bluray } from '../components/index';
+import blurays from '../data/blu-ray.js';
+import Bluray from './../components/Bluray';
 const HomePage = () => {
   return (
     <>

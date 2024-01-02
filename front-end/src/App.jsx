@@ -1,18 +1,15 @@
-import { Container } from 'react-bootstrap';
-import { MainHeader, Footer } from './components/index.js';
-import HomePage from './pages/HomePage.jsx';
+import SharedLayout from './components/SharedLayout';
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<SharedLayout />}>
+      <Route index={true} path="/" element={<HomePage />} />
+    </Route>
+  )
+);
 function App() {
-  return (
-    <>
-      <MainHeader />
-      <main className="py-3">
-        <Container>
-          <HomePage />
-        </Container>
-      </main>
-      <Footer />
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
