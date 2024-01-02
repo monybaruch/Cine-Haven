@@ -1,0 +1,23 @@
+{
+  "name": "cinehaven",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "movies rental shop built with MERN stack",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/monybaruch/Cine-Haven.git"
+  },
+  "author": "Mony Baruch",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/monybaruch/Cine-Haven/issues"
+  },
+  "homepage": "https://github.com/monybaruch/Cine-Haven#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
