@@ -1,4 +1,5 @@
 import MainHeader from './MainHeader';
 import Footer from './Footer';
+import Bluray from './Bluray';
 
-export { MainHeader, Footer };
+export { MainHeader, Footer, Bluray };

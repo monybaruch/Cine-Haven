@@ -4,19 +4,21 @@ import { FaCircleUser } from 'react-icons/fa6';
 const MainHeader = () => {
   return (
     <header>
-      <Navbar bg="dark" variant="dark" expand="md" collapseOnSelect>
+      <Navbar variant="dark" expand="md" collapseOnSelect className="primary-color">
         <Container>
           <Navbar.Brand href="#home">
-            <img alt="" src="/public/logo.png" width="30" height="30" className="d-inline-block align-top" /> Cine Haven
+            <img alt="" src="/public/logo.png" width="50" height="50" className="d-inline-block align-center p-1" />
+            {'  '}
+            CineHaven
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Nav.Link href="/cart">
+              <Nav.Link href="/cart" className="text-light">
                 <RiShoppingCartFill />
                 &nbsp;Cart
               </Nav.Link>
-              <Nav.Link href="/login">
+              <Nav.Link href="/login" className="text-light">
                 <FaCircleUser />
                 &nbsp;Sign In
               </Nav.Link>

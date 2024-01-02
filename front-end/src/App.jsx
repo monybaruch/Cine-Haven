@@ -1,12 +1,13 @@
 import { Container } from 'react-bootstrap';
 import { MainHeader, Footer } from './components/index.js';
+import HomePage from './pages/HomePage.jsx';
 function App() {
   return (
     <>
       <MainHeader />
       <main className="py-3">
         <Container>
-          <h1>Welcome To CineHaven</h1>
+          <HomePage />
         </Container>
       </main>
       <Footer />
