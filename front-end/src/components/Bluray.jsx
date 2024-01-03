@@ -1,5 +1,4 @@
 import { Card } from 'react-bootstrap';
-import BlurayListDetails from './BlurayListDetails';
 const Bluray = ({ bluray }) => {
   return (
     <Card className="my-2 p-2 rounded">
@@ -13,7 +12,6 @@ const Bluray = ({ bluray }) => {
           </Card.Title>
         </a>
         <Card.Text as="p">{bluray.description}</Card.Text>
-        <BlurayListDetails bluray={bluray} />
       </Card.Body>
     </Card>
   );

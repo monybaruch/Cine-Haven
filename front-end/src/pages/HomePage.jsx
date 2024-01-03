@@ -1,7 +1,21 @@
+// import axios from 'axios';
+// import { useEffect, useState } from 'react';
 import { Row, Col } from 'react-bootstrap';
-import blurays from '../data/blu-ray.js';
 import Bluray from './../components/Bluray';
+import blurays from '../data/blu-ray';
+
 const HomePage = () => {
+  // const [blurays, setBlurays] = useState([]);
+
+  // // useEffect(() => {
+  // //   const fetchBlurays = async () => {
+  // //     const { data } = await axios.get('http://localhost:4000/blurays');
+  // //     setBlurays(data);
+  // //   };
+
+  // //   fetchBlurays();
+  // // }, []);
+
   return (
     <>
       <h1>Latest Blu-ray movies</h1>
