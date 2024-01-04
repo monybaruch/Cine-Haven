@@ -1,6 +1,5 @@
 const blurays = [
   {
-    _id: '1',
     title: 'Oppenheimer',
     description:
       'The story of American scientist J. Robert Oppenheimer and his role in the development of the atomic bomb.',
@@ -8,7 +7,6 @@ const blurays = [
     director: 'Christopher Nolan',
     cast: ['Cillian Murphy', 'Emily Blunt', 'Matt Damon'],
     releaseYear: 2023,
-    rating: 'R',
     duration: '180 minutes',
     price: {
       purchase: 19.99,
@@ -20,18 +18,17 @@ const blurays = [
     },
     image: '/images/Oppenheimer.jpg',
     stock: 50,
-    numberOfReviews: 15,
-    viewrsRating: 8.3,
+    Reviews: [],
+    numReviews: 0,
+    Rating: 0,
   },
   {
-    _id: '2',
     title: 'Barbie',
     description: 'Barbie suffers a crisis that leads her to question her world and her existence.',
     genre: ['Adventure', 'Comedy'],
     director: 'Greta Gerwig',
     cast: ['Margot Robbie', 'Ryan Gosling', 'America Ferrera'],
     releaseYear: 2023,
-    rating: 'PG-13',
     duration: '114 minutes',
     price: {
       purchase: 19.99,
@@ -43,19 +40,18 @@ const blurays = [
     },
     image: '/images/Barbie.jpg',
     stock: 20,
-    numberOfReviews: 13,
-    viewrsRating: 9.5,
+    Reviews: [],
+    numReviews: 0,
+    Rating: 0,
   },
   {
-    _id: '3',
     title: 'Five Nights at Freddy',
     description:
       'A troubled security guard begins working at Freddy Fazbears Pizza. During his first night on the job, he realizes that the night shift wont be so easy to get through. Pretty soon he will unveil what actually happened at Freddys.',
     genre: ['Horror', 'Thriller'],
     director: 'Emma Tammi',
-    cast: ['Josh Hutcherson', 'Piper Rubio', ' Elizabeth Lail'],
+    cast: ['Josh Hutcherson', 'Piper Rubio', 'Elizabeth Lail'],
     releaseYear: 2023,
-    rating: 'PG-13',
     duration: '110 minutes',
     price: {
       purchase: 19.99,
@@ -67,19 +63,18 @@ const blurays = [
     },
     image: '/images/Five-nights-at-freddy.jpg',
     stock: 20,
-    numberOfReviews: 13,
-    viewrsRating: 8.5,
+    Reviews: [],
+    numReviews: 0,
+    Rating: 0,
   },
   {
-    _id: '4',
     title: 'Avatar: The Way of Water',
     description:
       'Jake Sully lives with his newfound family formed on the extrasolar moon Pandora. Once a familiar threat returns to finish what was previously started, Jake must work with Neytiri and the army of the Navi race to protect their home.',
-    genre: ['Horror', 'Thriller'],
+    genre: ['Action', 'Adventure'],
     director: 'James Cameron',
-    cast: ['Sam Worthington', 'Zoe Saldana', ' Sigourney Weaver'],
+    cast: ['Sam Worthington', 'Zoe Saldana', 'Sigourney Weaver'],
     releaseYear: 2022,
-    rating: 'PG-13',
     duration: '193 minutes',
     price: {
       purchase: 19.99,
@@ -91,19 +86,18 @@ const blurays = [
     },
     image: '/images/Avatar.jpg',
     stock: 20,
-    numberOfReviews: 13,
-    viewrsRating: 7.5,
+    Reviews: [],
+    numReviews: 0,
+    Rating: 0,
   },
   {
-    _id: '5',
     title: 'John Wick: Chapter 4',
     description:
       'John Wick uncovers a path to defeating The High Table. But before he can earn his freedom, Wick must face off against a new enemy with powerful alliances across the globe and forces that turn old friends into foes.',
     genre: ['Action', 'Crime'],
     director: 'Chad Stahelski',
-    cast: [' Keanu Reeves', 'Donnie Yen', 'Bill Skarsgård'],
+    cast: ['Keanu Reeves', 'Donnie Yen', 'Bill Skarsgård'],
     releaseYear: 2023,
-    rating: 'R',
     duration: '169 minutes',
     price: {
       purchase: 19.99,
@@ -115,8 +109,9 @@ const blurays = [
     },
     image: '/images/John.jpg',
     stock: 7,
-    numberOfReviews: 5,
-    viewrsRating: 9.4,
+    Reviews: [],
+    numReviews: 0,
+    Rating: 0,
   },
 ];
 
