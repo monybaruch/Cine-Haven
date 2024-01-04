@@ -1,18 +1,45 @@
-import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import { Image, Col, Row } from 'react-bootstrap';
-import blurays from '../data/blu-ray';
 import BlurayListDetails from '../components/BlurayListDetails';
 import BlurayPriceCard from '../components/BlurayPriceCard';
+import axios from 'axios';
+
+import { useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Image, Col, Row } from 'react-bootstrap';
+
 const BlurayPage = () => {
+  const [bluray, setBluray] = useState({
+    title: '',
+    director: '',
+    cast: [],
+    genre: [],
+    releaseYear: null,
+    rating: '',
+    duration: '',
+    price: {
+      purchase: 0,
+      rental: {
+        oneWeek: 0,
+        twoWeeks: 0,
+        oneMonth: 0,
+      },
+    },
+    image: '',
+    stock: 0,
+    viewrsRating: 0,
+  });
+
   const { id: blurayId } = useParams();
-  let bluray = blurays.find((p) => p._id === blurayId);
-  console.log(bluray);
 
-  if (!bluray) {
-    return <div>Bluray not found.</div>;
-  }
+  useEffect(() => {
+    const fetchBluray = async () => {
+      const { data } = await axios.get(`http://localhost:4000/blurays/${blurayId}`);
 
+      setBluray(data);
+    };
+
+    fetchBluray();
+  }, [blurayId]);
   return (
     <>
       <Link className="btn btn-light my-2" to="/">
@@ -22,12 +49,8 @@ const BlurayPage = () => {
         <Col md={5}>
           <Image src={bluray.image} alt={`${bluray.title} cover`} fluid />
         </Col>
-        <Col md={4}>
-          <BlurayListDetails bluray={bluray} />
-        </Col>
-        <Col md={3}>
-          <BlurayPriceCard bluray={bluray} />
-        </Col>
+        <Col md={4}>{<BlurayListDetails bluray={bluray} />}</Col>
+        <Col md={3}>{<BlurayPriceCard bluray={bluray} />}</Col>
       </Row>
     </>
   );
