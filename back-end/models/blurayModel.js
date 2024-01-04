@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const reviewSchema = mongoose.Schema(
   {
@@ -21,7 +21,7 @@ const reviewSchema = mongoose.Schema(
     },
   },
   {
-    timeseries: true,
+    timestamps: true,
   }
 );
 
@@ -60,7 +60,7 @@ const bluraySchema = new mongoose.Schema(
     Rating: { type: Number, required: true, default: 0 },
   },
   {
-    timeseries: true,
+    timestamps: true,
   }
 );
 
