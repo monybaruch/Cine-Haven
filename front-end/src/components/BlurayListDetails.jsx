@@ -6,9 +6,9 @@ const BlurayListDetails = ({ bluray }) => {
       <ListGroupItem>Cast: {bluray.cast.join(', ')}</ListGroupItem>
       <ListGroupItem>Genre: {bluray.genre.join(', ')}</ListGroupItem>
       <ListGroupItem>Release Year: {bluray.releaseYear}</ListGroupItem>
-      <ListGroupItem>Rating: {bluray.rating}</ListGroupItem>
       <ListGroupItem>Duration: {bluray.duration}</ListGroupItem>
-      <ListGroupItem>Viewers Rating: {bluray.viewrsRating} </ListGroupItem>
+      <ListGroupItem>Rating: {bluray.rating}</ListGroupItem>
+      <ListGroupItem>Number Of Reviews: {bluray.numReviews}</ListGroupItem>
     </ListGroup>
   );
 };

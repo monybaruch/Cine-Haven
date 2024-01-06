@@ -9,23 +9,19 @@ import { Image, Col, Row } from 'react-bootstrap';
 
 const BlurayPage = () => {
   const [bluray, setBluray] = useState({
+    _id: '',
     title: '',
+    description: '',
+    genre: [],
     director: '',
     cast: [],
-    genre: [],
     releaseYear: null,
     rating: '',
     duration: '',
-    price: {
-      purchase: 0,
-      rental: {
-        oneWeek: 0,
-        twoWeeks: 0,
-        oneMonth: 0,
-      },
-    },
+    price: 0,
     image: '',
     stock: 0,
+    numberOfReviews: 0,
     viewrsRating: 0,
   });
 
@@ -40,6 +36,7 @@ const BlurayPage = () => {
 
     fetchBluray();
   }, [blurayId]);
+
   return (
     <>
       <Link className="btn btn-light my-2" to="/">

@@ -1,7 +1,8 @@
-import blurays from './data/blu-ray.js';
+// import blurays from './data/blu-ray.js';
 import dotenv from 'dotenv';
 dotenv.config();
 import connectDB from './config/db.js';
+import bluraysRoutes from './routes/bluraysRoutes.js';
 import express from 'express';
 import cors from 'cors';
 
@@ -15,14 +16,7 @@ app.get('/', (req, res) => {
   res.send('working...');
 });
 
-app.get('/blurays', (req, res) => {
-  res.json(blurays);
-});
-
-app.get('/blurays/:id', (req, res) => {
-  let bluray = blurays.find((p) => p._id === req.params.id);
-  res.json(bluray);
-});
+app.use('/blurays', bluraysRoutes);
 
 console.log(`Attempting to listen on port: ${PORT}`);
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

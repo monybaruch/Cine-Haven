@@ -39,20 +39,7 @@ const bluraySchema = new mongoose.Schema(
     cast: { type: [String], required: true, default: [] },
     releaseYear: { type: Number, required: true, default: 0 },
     duration: { type: String, required: true },
-    price: {
-      type: {
-        purchase: { type: Number, required: true, default: 0 },
-        rental: {
-          type: {
-            oneWeek: { type: Number, required: true, default: 0 },
-            twoWeeks: { type: Number, required: true, default: 0 },
-            oneMonth: { type: Number, required: true, default: 0 },
-          },
-          required: true,
-        },
-      },
-      required: true,
-    },
+    price: { type: Number, required: true, default: 0 },
     image: { type: String, required: true },
     stock: { type: Number, required: true, default: 0 },
     Reviews: [reviewSchema],

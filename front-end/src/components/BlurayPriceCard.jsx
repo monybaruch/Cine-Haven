@@ -13,22 +13,9 @@ const BlurayPriceCard = ({ bluray }) => {
         </ListGroupItem>
         <ListGroupItem>
           <Button className="btn-block" type="button" disabled={bluray.stock === 0}>
-            Add To Cart - ${bluray.price.purchase} (Purchase)
+            Add To Cart - ${bluray.price}
           </Button>
         </ListGroupItem>
-        {Object.entries(bluray.price.rental).map(([period, price]) => (
-          <ListGroupItem key={period}>
-            <Row>
-              <Col>{period} Rental:</Col>
-              <Col>
-                <strong>${price}</strong>
-              </Col>
-            </Row>
-            <Button className="btn-block mt-2" type="button" disabled={bluray.stock === 0}>
-              Rent for {period}
-            </Button>
-          </ListGroupItem>
-        ))}
       </ListGroup>
     </Card>
   );
