@@ -19,8 +19,10 @@ router.get(
 
     if (bluray) {
       return res.json(bluray);
+    } else {
+      res.status(404);
+      throw new Error('Resource not found!');
     }
-    res.status(404).json({ massege: 'Bluray Not Found!' });
   })
 );
 

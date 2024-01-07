@@ -1,4 +1,4 @@
-// import blurays from './data/blu-ray.js';
+import { notFound, errorHandler } from './middleware/errorMiddlewere.js';
 import dotenv from 'dotenv';
 dotenv.config();
 import connectDB from './config/db.js';
@@ -18,5 +18,7 @@ app.get('/', (req, res) => {
 
 app.use('/blurays', bluraysRoutes);
 
-console.log(`Attempting to listen on port: ${PORT}`);
+app.use(notFound);
+app.use(errorHandler);
+
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
