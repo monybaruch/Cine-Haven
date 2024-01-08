@@ -1,7 +1,10 @@
-import SharedLayout from './components/SharedLayout';
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
-import HomePage from './pages/HomePage';
+import SharedLayout from './components/SharedLayout';
 import BlurayPage from './pages/BlurayPage';
+import HomePage from './pages/HomePage.jsx';
+import { Provider } from 'react-redux';
+import store from './store.js';
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<SharedLayout />}>
@@ -11,7 +14,11 @@ const router = createBrowserRouter(
   )
 );
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <Provider store={store}>
+      <RouterProvider router={router} />{' '}
+    </Provider>
+  );
 }
 
 export default App;
