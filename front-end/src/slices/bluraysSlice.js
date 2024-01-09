@@ -1,4 +1,4 @@
-import { BLURAYS_URL } from '../constants.js/constants';
+import { BLURAYS_URL } from '../constants/constants.js';
 import { mainSlice } from './mainSlice';
 
 export const bluraysSlice = mainSlice.injectEndpoints({

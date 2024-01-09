@@ -1,5 +1,7 @@
 import BlurayListDetails from '../components/BlurayListDetails';
 import BlurayPriceCard from '../components/BlurayPriceCard';
+import Loader from '../components/Loader';
+
 import { useGetBlurayQuery } from '../slices/bluraysSlice';
 import { Image, Col, Row } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
@@ -16,7 +18,7 @@ const BlurayPage = () => {
       </Link>
 
       {isLoading ? (
-        <h2>Loading...</h2>
+        <Loader />
       ) : isError ? (
         <h2>{isError?.data.message || isError.error}</h2>
       ) : (

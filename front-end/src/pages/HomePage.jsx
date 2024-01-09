@@ -1,13 +1,14 @@
-import { Row, Col } from 'react-bootstrap';
-import Bluray from './../components/Bluray';
 import { useGetBluraysQuery } from '../slices/bluraysSlice';
+import Bluray from './../components/Bluray';
+import { Row, Col } from 'react-bootstrap';
+import Loader from '../components/Loader';
 const HomePage = () => {
   const { data: blurays, isError, isLoading } = useGetBluraysQuery();
 
   return (
     <>
       {isLoading ? (
-        <h2>Loading...</h2>
+        <Loader />
       ) : isError ? (
         <h2>{isError?.data.message || isError.error}</h2>
       ) : (
