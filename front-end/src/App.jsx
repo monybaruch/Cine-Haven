@@ -2,6 +2,7 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import SharedLayout from './components/SharedLayout';
 import BlurayPage from './pages/BlurayPage';
 import HomePage from './pages/HomePage.jsx';
+import CartPage from './pages/CartPage.jsx';
 import { Provider } from 'react-redux';
 import store from './store.js';
 
@@ -10,6 +11,7 @@ const router = createBrowserRouter(
     <Route path="/" element={<SharedLayout />}>
       <Route index={true} path="/" element={<HomePage />} />
       <Route path="/bluray/:id" element={<BlurayPage />} />
+      <Route path="/cart" element={<CartPage />} />
     </Route>
   )
 );
