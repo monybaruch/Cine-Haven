@@ -41,7 +41,7 @@ const CartPage = () => {
                     <Form.Control
                       as="select"
                       value={cartItem.quantity}
-                      onChange={(e) => addToCartHandle(cartItem, Number(e.target.value))}
+                      onChange={(e) => addToCartHandle(cartItem, e.target.value)}
                     >
                       {[...Array(cartItem.stock).keys()].map((x) => (
                         <option key={x + 1} value={x + 1}>
@@ -65,8 +65,11 @@ const CartPage = () => {
         <Card>
           <ListGroup variant="flush">
             <ListGroup.Item>
-              <h4>Total Items: {cartItems.reduce((acc, cartItem) => acc + cartItem.quantity, 0)}</h4>
-              <h4>Total price: {cartItems.reduce((acc, cartItem) => acc + cartItem.quantity * cartItem.price, 0)}$</h4>
+              <h4>Total Items: {cartItems.reduce((acc, cartItem) => acc + Number(cartItem.quantity), 0)}</h4>
+              <h4>
+                Total price:{' '}
+                {cartItems.reduce((acc, cartItem) => acc + Number(cartItem.quantity) * cartItem.price, 0).toFixed(2)}$
+              </h4>
             </ListGroup.Item>
             <ListGroup.Item>
               <Button type="buttonn" className="btn-block" disabled={cartItems.length === 0}>

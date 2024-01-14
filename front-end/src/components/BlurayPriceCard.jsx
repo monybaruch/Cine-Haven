@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 const BlurayPriceCard = ({ bluray }) => {
-  const [quantity, setQuantity] = useState();
+  const [quantity, setQuantity] = useState(1);
 
   const dispatch = useDispatch();
 

@@ -5,7 +5,7 @@ import { FaCircleUser } from 'react-icons/fa6';
 import { useSelector } from 'react-redux';
 const MainHeader = () => {
   const { cartItems } = useSelector((state) => state.cart);
-  console.log(cartItems);
+
   return (
     <header>
       <Navbar variant="dark" expand="md" collapseOnSelect className="primary-color">
@@ -26,7 +26,7 @@ const MainHeader = () => {
                   &nbsp;Cart
                   {cartItems.length > 0 && (
                     <Badge pill bg="success" style={{ marginLeft: '10px', padding: '10px' }}>
-                      {cartItems.reduce((acc, total) => acc + total.quantity, 0)}
+                      {cartItems.reduce((acc, total) => acc + Number(total.quantity), 0)}
                     </Badge>
                   )}
                 </Nav.Link>
