@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { updateCart } from '../utils/cartUtil';
 
 const initialState = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : { cartItems: [] };
 
@@ -15,24 +16,15 @@ const cartSlice = createSlice({
       } else {
         state.cartItems = [...state.cartItems, item];
       }
-      //calc the items price
-      state.itemsPrice = state.cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
-
-      //calc the shipping cost (if the total order is over 60$ then the shipping is free , else the shipping is 7$)
-
-      state.shippingPrice = state.itemsPrice > 60 ? 0 : 7;
-
-      // calc total price
-
-      state.totalPrice = Number(state.itemsPrice) + Number(state.shippingPrice).toFixed(2);
-
-      //save the state to local storage
-
-      localStorage.setItem('cart', JSON.stringify(state));
+      return updateCart(state, item);
+    },
+    removeFromCart: (state, action) => {
+      state.cartItems = state.cartItems.filter((x) => x._id !== action.payload);
+      return updateCart(state);
     },
   },
 });
 
-export const { addToCart } = cartSlice.actions;
+export const { addToCart, removeFromCart } = cartSlice.actions;
 
 export default cartSlice.reducer;
