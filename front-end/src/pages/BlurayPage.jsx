@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 
 const BlurayPage = () => {
   const { id: blurayId } = useParams();
+
   const { data: bluray, isError, isLoading } = useGetBlurayQuery(blurayId);
 
   return (
