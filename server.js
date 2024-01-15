@@ -1,6 +1,7 @@
 import { notFound, errorHandler } from './middleware/errorMiddlewere.js';
 import bluraysRoutes from './routes/bluraysRoutes.js';
 import userRoutes from './routes/userRoutes.js';
+import cookieParser from 'cookie-parser';
 import connectDB from './config/db.js';
 import express from 'express';
 import dotenv from 'dotenv';
@@ -12,12 +13,15 @@ const PORT = process.env.PORT || 3005;
 connectDB(); // this will make the connection to mongodb
 
 const app = express();
+//middleware to parses the cookie
+app.use(cookieParser());
 
 //middleware to parse the body that is send
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(cors());
+
 app.get('/', (req, res) => {
   res.send('working...');
 });

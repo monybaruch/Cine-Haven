@@ -3,8 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Row } from 'react-bootstrap';
 
-import CartItems from '../components/CartItems';
 import CartSummary from '../components/CartSummary';
+import CartItems from '../components/CartItems';
 
 const CartPage = () => {
   const dispatch = useDispatch();
