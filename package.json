@@ -5,10 +5,10 @@
   "description": "movies rental shop built with MERN stack",
   "main": "server.js",
   "scripts": {
-    "start": "node back-end/server.js",
-    "server": "nodemon back-end/server.js",
-    "seed": "node back-end/seeder.js",
-    "delete": "node back-end/seeder.js -d"
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "seed": "node seeder.js",
+    "delete": "node seeder.js -d"
   },
   "repository": {
     "type": "git",
