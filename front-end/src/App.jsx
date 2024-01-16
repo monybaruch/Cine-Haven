@@ -1,5 +1,6 @@
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
 import SharedLayout from './components/SharedLayout';
+import RegisterPage from './pages/RegisterPage';
 import LoginPage from './pages/LoginPage.jsx';
 import BlurayPage from './pages/BlurayPage';
 import HomePage from './pages/HomePage.jsx';
@@ -14,6 +15,7 @@ const router = createBrowserRouter(
       <Route path="/bluray/:id" element={<BlurayPage />} />
       <Route path="/cart" element={<CartPage />} />
       <Route path="/login" element={<LoginPage />} />
+      <Route path="/register" element={<RegisterPage />} />
     </Route>
   )
 );

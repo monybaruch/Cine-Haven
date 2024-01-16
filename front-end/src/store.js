@@ -12,5 +12,4 @@ const store = configureStore({
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(mainSlice.middleware),
   devTools: true,
 });
-
 export default store;
