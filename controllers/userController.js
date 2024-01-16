@@ -1,25 +1,17 @@
 import asyncHandler from '../middleware/asyncHandler.js';
+import generateToken from '../utils/jwtToken.js';
 import User from '../models/userModel.js';
-import jwt from 'jsonwebtoken';
 // @desc   Authenticate the user and gets the token
 // @route  POST /users/login
 // @access Public
 
 const loginUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
+
   const user = await User.findOne({ email });
 
   if (user && (await user.passMatch(password))) {
-    const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET_TOKEN, { expiresIn: '15d' });
-
-    //set jwt as http only cookie
-
-    res.cookie('jwt', token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV !== 'development',
-      sameSite: 'strict',
-      maxAge: 15 * 24 * 60 * 60 * 1000, // convert it to 15 days
-    });
+    generateToken(res, user._id);
 
     res.json({
       _id: user._id,
@@ -50,6 +42,8 @@ const registerUser = asyncHandler(async (req, res) => {
     password,
   });
   if (user) {
+    generateToken(res, user._id);
+
     res.json({
       _id: user._id,
       name: user.name,
@@ -76,7 +70,18 @@ const logoutUser = asyncHandler(async (req, res) => {
 // @access Private
 
 const getUserProfile = asyncHandler(async (req, res) => {
-  res.send('user profile');
+  const user = await User.findById(req.user._id);
+  if (user) {
+    res.json({
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      isAdmin: user.isAdmin,
+    });
+  } else {
+    res.status(404);
+    throw new Error('User not found! please try again!');
+  }
 });
 
 // @desc   Update user profile
@@ -84,7 +89,25 @@ const getUserProfile = asyncHandler(async (req, res) => {
 // @access Private
 
 const updateUserProfile = asyncHandler(async (req, res) => {
-  res.send('update user profile');
+  const user = await User.findById(req.user._id);
+  if (user) {
+    user.name = req.body.name || user.name;
+    user.email = req.body.email || user.email;
+    if (req.body.password) {
+      user.password = req.body.password;
+    }
+
+    const updateUserData = await user.save();
+    res.status(200).json({
+      _id: updateUserData._id,
+      name: updateUserData.name,
+      email: updateUserData.email,
+      isAdmin: updateUserData.isAdmin,
+    });
+  } else {
+    res.status(404);
+    throw new Error('User not found! please try again!');
+  }
 });
 
 // @desc   Get users
