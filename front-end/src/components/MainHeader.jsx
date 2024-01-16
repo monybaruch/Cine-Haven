@@ -31,7 +31,7 @@ const MainHeader = () => {
                   )}
                 </Nav.Link>
               </LinkContainer>
-              <LinkContainer to="login">
+              <LinkContainer to="/login">
                 <Nav.Link className="text-light">
                   <FaCircleUser />
                   &nbsp;Sign In
