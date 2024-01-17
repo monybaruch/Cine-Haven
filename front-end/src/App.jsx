@@ -1,5 +1,6 @@
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
 import PrivateRoute from './components/PrivateRoute.jsx';
+import PlaceOrderPage from './pages/PlaceOrderPage.jsx';
 import SharedLayout from './components/SharedLayout';
 import DeliveryPage from './pages/DeliveryPage.jsx';
 import PaymentPage from './pages/PaymentPage.jsx';
@@ -23,6 +24,7 @@ const router = createBrowserRouter(
       <Route path="" element={<PrivateRoute />}>
         <Route path="/shipping" element={<DeliveryPage />} />
         <Route path="/payment" element={<PaymentPage />} />
+        <Route path="/placeorder" element={<PlaceOrderPage />} />
       </Route>
     </Route>
   )
