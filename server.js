@@ -34,7 +34,7 @@ app.use('/orders', orderRoutes);
 app.use('/users', userRoutes);
 
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '/front-end/build')));
+  app.use(express.static(path.join(__dirname, 'front-end/build')));
 
   app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'front-end', 'build', 'index.html')));
 } else {
