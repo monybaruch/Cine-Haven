@@ -1,5 +1,7 @@
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
+import PrivateRoute from './components/PrivateRoute.jsx';
 import SharedLayout from './components/SharedLayout';
+import DeliveryPage from './pages/DeliveryPage.jsx';
 import RegisterPage from './pages/RegisterPage';
 import LoginPage from './pages/LoginPage.jsx';
 import BlurayPage from './pages/BlurayPage';
@@ -16,9 +18,14 @@ const router = createBrowserRouter(
       <Route path="/cart" element={<CartPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
+
+      <Route path="" element={<PrivateRoute />}>
+        <Route path="/shipping" element={<DeliveryPage />} />
+      </Route>
     </Route>
   )
 );
+
 function App() {
   return (
     <Provider store={store}>
