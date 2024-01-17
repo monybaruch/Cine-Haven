@@ -29,10 +29,6 @@ app.use(
   })
 );
 
-app.get('/', (req, res) => {
-  res.send('working...');
-});
-
 app.use('/blurays', bluraysRoutes);
 app.use('/orders', orderRoutes);
 app.use('/users', userRoutes);

@@ -8,11 +8,11 @@ import { toast } from 'react-toastify';
 import { useEffect } from 'react';
 
 const PlaceOrderPage = () => {
-  const navigate = useNavigate();
-
   const cart = useSelector((state) => state.cart);
 
   const [createOrder] = useCreateOrderMutation();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (!cart.shippingAddress.address) {
@@ -22,20 +22,19 @@ const PlaceOrderPage = () => {
     }
   }, [cart.paymentMethod, cart.shippingAddress.address, navigate]);
 
-  const dispatch = useDispatch();
   const placeOrderHandler = async () => {
     try {
+      console.log('Cart Items:', cart.cartItems);
       const res = await createOrder({
         orderItems: cart.cartItems,
         shippingAddress: cart.shippingAddress,
         paymentMethod: cart.paymentMethod,
         itemsPrice: cart.itemsPrice,
         shippingPrice: cart.shippingPrice,
-        taxPrice: cart.taxPrice,
         totalPrice: cart.totalPrice,
       }).unwrap();
       dispatch(clearCartItems());
-      navigate(`/order/${res._id}`);
+      navigate(`/orders/${res._id}`);
     } catch (err) {
       toast.error(err);
     }

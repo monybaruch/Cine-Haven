@@ -1,4 +1,4 @@
-import { ORDERS_URL } from '../constants/constants';
+import { ORDERS_URL } from '../constants/constants.js';
 import { mainSlice } from './mainSlice';
 
 export const ordersSlice = mainSlice.injectEndpoints({

@@ -1,8 +1,8 @@
 import { Col, Card, ListGroup, Button } from 'react-bootstrap';
 
 const CartSummary = ({ cartItems, checkoutHandle }) => {
-  const totalItems = cartItems.reduce((acc, item) => acc + Number(item.quantity), 0);
-  const totalPrice = cartItems.reduce((acc, item) => acc + Number(item.quantity) * item.price, 0).toFixed(2);
+  const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+  const totalPrice = cartItems.reduce((acc, item) => acc + item.quantity * item.price, 0).toFixed(2);
 
   return (
     <Col md={4}>
