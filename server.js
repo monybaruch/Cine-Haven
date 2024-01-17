@@ -1,6 +1,7 @@
 import { notFound, errorHandler } from './middleware/errorMiddlewere.js';
 import bluraysRoutes from './routes/bluraysRoutes.js';
 import userRoutes from './routes/userRoutes.js';
+import orderRoutes from './routes/orderRoutes.js';
 import cookieParser from 'cookie-parser';
 import connectDB from './config/db.js';
 import express from 'express';
@@ -33,6 +34,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/blurays', bluraysRoutes);
+app.use('/orders', orderRoutes);
 app.use('/users', userRoutes);
 
 app.use(notFound);

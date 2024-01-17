@@ -2,6 +2,7 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import PrivateRoute from './components/PrivateRoute.jsx';
 import SharedLayout from './components/SharedLayout';
 import DeliveryPage from './pages/DeliveryPage.jsx';
+import PaymentPage from './pages/PaymentPage.jsx';
 import RegisterPage from './pages/RegisterPage';
 import LoginPage from './pages/LoginPage.jsx';
 import BlurayPage from './pages/BlurayPage';
@@ -21,6 +22,7 @@ const router = createBrowserRouter(
 
       <Route path="" element={<PrivateRoute />}>
         <Route path="/shipping" element={<DeliveryPage />} />
+        <Route path="/payment" element={<PaymentPage />} />
       </Route>
     </Route>
   )
