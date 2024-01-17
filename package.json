@@ -9,7 +9,7 @@
     "server": "nodemon server.js",
     "seed": "node seeder.js",
     "delete": "node seeder.js -d",
-    "build": "npm install && npm install --prefix frontend && npm run build --prefix front-end"
+    "build": "npm install && npm install --prefix front-end && npm run build --prefix front-end"
   },
   "repository": {
     "type": "git",
