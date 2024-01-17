@@ -34,8 +34,6 @@ app.use('/orders', orderRoutes);
 app.use('/users', userRoutes);
 
 if (process.env.NODE_ENV === 'production') {
-  const __dirname = path.resolve();
-  app.use('/uploads', express.static('/var/data/uploads'));
   app.use(express.static(path.join(__dirname, '/front-end/build')));
 
   app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'front-end', 'build', 'index.html')));
