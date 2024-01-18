@@ -10,7 +10,7 @@ const HomePage = () => {
       {isLoading ? (
         <Loader />
       ) : isError ? (
-        <h2>{isError?.data.message || isError.error}</h2>
+        <h2>{isError.error}</h2>
       ) : (
         <>
           <h1 className="title">Latest Blu-ray Movies:</h1>

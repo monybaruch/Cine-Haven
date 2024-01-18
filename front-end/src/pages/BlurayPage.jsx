@@ -21,7 +21,7 @@ const BlurayPage = () => {
       {isLoading ? (
         <Loader />
       ) : isError ? (
-        <h2>{isError?.data.message || isError.error}</h2>
+        <h2>{isError.error}</h2>
       ) : (
         <Row>
           <Col md={5}>
