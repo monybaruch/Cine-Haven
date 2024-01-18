@@ -23,7 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(
   cors({
-    origin: 'http://localhost:5173', // allow to server to accept request from different origin
+    origin: process.env.FRONT_END_URL, // allow to server to accept request from different origin
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
   })
