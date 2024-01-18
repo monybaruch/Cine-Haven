@@ -10,5 +10,4 @@ const baseQuery = fetchBaseQuery({
 export const mainSlice = createApi({
   baseQuery,
   tagTypes: ['Bluray', 'Order', 'User'],
-  endpoints: (builder) => ({}),
 });
