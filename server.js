@@ -7,6 +7,7 @@ import connectDB from './config/db.js';
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
+import morgan from 'morgan';
 dotenv.config();
 
 const PORT = process.env.PORT || 3005;
@@ -20,6 +21,11 @@ app.use(cookieParser());
 //middleware to parse the body that is send
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Dev logging middleware
+if (process.env.NODE_ENV !== 'production') {
+  app.use(morgan('dev'));
+}
 
 app.use(
   cors({

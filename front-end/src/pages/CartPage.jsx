@@ -9,6 +9,9 @@ import CartItems from '../components/CartItems';
 const CartPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const { userInfo } = useSelector((state) => state.auth);
+
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
 
@@ -21,7 +24,11 @@ const CartPage = () => {
   };
 
   const checkoutHandle = () => {
-    navigate('/login?redirect=/shipping');
+    if (userInfo) {
+      navigate('/shipping');
+    } else {
+      navigate('/login');
+    }
   };
 
   return (

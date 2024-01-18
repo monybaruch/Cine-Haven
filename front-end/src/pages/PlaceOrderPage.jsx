@@ -24,9 +24,14 @@ const PlaceOrderPage = () => {
 
   const placeOrderHandler = async () => {
     try {
-      console.log('Cart Items:', cart.cartItems);
+      const orderItems = cart.cartItems.map((item) => {
+        return {
+          quantity: item.quantity,
+          bluray: item._id,
+        };
+      });
       const res = await createOrder({
-        orderItems: cart.cartItems,
+        orderItems,
         shippingAddress: cart.shippingAddress,
         paymentMethod: cart.paymentMethod,
         itemsPrice: cart.itemsPrice,
@@ -34,7 +39,8 @@ const PlaceOrderPage = () => {
         totalPrice: cart.totalPrice,
       }).unwrap();
       dispatch(clearCartItems());
-      navigate(`/orders/${res._id}`);
+      console.log(res._id);
+      // navigate(`/orders/${res._id}`);
     } catch (err) {
       toast.error(err);
     }
