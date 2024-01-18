@@ -13,7 +13,7 @@ const blurays = [
     stock: 50,
     Reviews: [],
     numReviews: 0,
-    Rating: 0,
+    Rating: 7.5,
   },
   {
     title: 'Barbie',
@@ -28,7 +28,7 @@ const blurays = [
     stock: 20,
     Reviews: [],
     numReviews: 0,
-    Rating: 0,
+    Rating: 8.5,
   },
   {
     title: 'Five Nights at Freddy',
@@ -44,7 +44,7 @@ const blurays = [
     stock: 20,
     Reviews: [],
     numReviews: 0,
-    Rating: 0,
+    Rating: 6.5,
   },
   {
     title: 'Avatar: The Way of Water',
@@ -60,7 +60,7 @@ const blurays = [
     stock: 20,
     Reviews: [],
     numReviews: 0,
-    Rating: 0,
+    Rating: 4.5,
   },
   {
     title: 'John Wick: Chapter 4',
@@ -76,7 +76,7 @@ const blurays = [
     stock: 7,
     Reviews: [],
     numReviews: 0,
-    Rating: 0,
+    Rating: 8,
   },
   {
     title: 'Aquaman and the Lost Kingdom',
@@ -92,7 +92,7 @@ const blurays = [
     stock: 45,
     Reviews: [],
     numReviews: 0,
-    Rating: 0,
+    Rating: 5,
   },
   {
     title: 'Alita: Battle Angel',
@@ -108,7 +108,7 @@ const blurays = [
     stock: 27,
     Reviews: [],
     numReviews: 0,
-    Rating: 0,
+    Rating: 10,
   },
   {
     title: 'Scream 6',
@@ -124,7 +124,7 @@ const blurays = [
     stock: 14,
     Reviews: [],
     numReviews: 0,
-    Rating: 0,
+    Rating: 7,
   },
 ];
 

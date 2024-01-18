@@ -13,7 +13,7 @@ const HomePage = () => {
         <h2>{isError?.data.message || isError.error}</h2>
       ) : (
         <>
-          <h1>Latest Blu-ray movies</h1>
+          <h1 className="title">Latest Blu-ray Movies:</h1>
           <Row>
             {blurays.map((bluray) => (
               <Col sm={12} md={6} lg={4} xl={3} key={bluray._id}>

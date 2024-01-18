@@ -26,7 +26,7 @@ const CartPage = () => {
 
   return (
     <Row>
-      <h1>Welcome To Your Shopping Cart</h1>
+      <h1 className="title">Welcome To Your Shopping Cart</h1>
       <CartItems cartItems={cartItems} addToCartHandle={addToCartHandle} removeFromCartHandle={removeFromCartHandle} />
       <CartSummary cartItems={cartItems} checkoutHandle={checkoutHandle} />
     </Row>

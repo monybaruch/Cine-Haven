@@ -5,3 +5,9 @@ main {
 .primary-color {
   background-color: #3498db;
 }
+
+.title {
+  color: #3498db;
+  font-weight: bolder;
+  margin-top: 2rem;
+}
