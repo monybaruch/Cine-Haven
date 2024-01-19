@@ -1,7 +1,6 @@
 import FormContainer from '../components/FormContainer';
 import { savePaymentMethod } from '../slices/cartSlice';
 import { useDispatch, useSelector } from 'react-redux';
-import styles from '../assets/styles/form.module.css';
 import { Col, Form, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
@@ -30,7 +29,7 @@ const PaymentPage = () => {
 
   return (
     <FormContainer>
-      <h1 className={styles.formTitle}>Payment Method</h1>
+      <h1 className="formTitle">Payment Method</h1>
       <Form onSubmit={paymentHandler}>
         <Form.Group className="mb-3">
           <Form.Label as="legend">Select Payment Method</Form.Label>
@@ -45,7 +44,7 @@ const PaymentPage = () => {
             ></Form.Check>
           </Col>
         </Form.Group>
-        <Button type="submit" variant="primary" className={styles.formButton}>
+        <Button type="submit" variant="primary" className="formButton">
           Continue
         </Button>
       </Form>

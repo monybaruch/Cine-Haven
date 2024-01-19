@@ -1,7 +1,6 @@
 import { saveShippingAddress } from '../slices/cartSlice';
 import FormContainer from '../components/FormContainer';
 import { useDispatch, useSelector } from 'react-redux';
-import styles from '../assets/styles/form.module.css';
 import { Form, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
@@ -26,49 +25,49 @@ const DeliveryPage = () => {
 
   return (
     <FormContainer>
-      <h1 className={styles.formTitle}>Welcome to the delivery page:</h1>
+      <h1 className="formTitle">Welcome to the delivery page:</h1>
       <Form onSubmit={deliveryHandler}>
         <Form.Group className="mb-3" controlId="address">
-          <Form.Label className={styles.formLabel}>Address</Form.Label>
+          <Form.Label className="formLabel">Address</Form.Label>
           <Form.Control
             type="text"
             placeholder="Enter address"
             value={address}
             onChange={(e) => setAddress(e.target.value)}
-            className={styles.inputField}
+            className="inputField"
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="city">
-          <Form.Label className={styles.formLabel}>City</Form.Label>
+          <Form.Label className="formLabel">City</Form.Label>
           <Form.Control
             type="text"
             placeholder="Enter city"
             value={city}
             onChange={(e) => setCity(e.target.value)}
-            className={styles.inputField}
+            className="inputField"
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="postalCode">
-          <Form.Label className={styles.formLabel}>Postal Code</Form.Label>
+          <Form.Label className="formLabel">Postal Code</Form.Label>
           <Form.Control
             type="text"
             placeholder="Enter postal code"
             value={postalCode}
             onChange={(e) => setPostalCode(e.target.value)}
-            className={styles.inputField}
+            className="inputField"
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="country">
-          <Form.Label className={styles.formLabel}>Country</Form.Label>
+          <Form.Label className="formLabel">Country</Form.Label>
           <Form.Control
             type="text"
             placeholder="Enter country"
             value={country}
             onChange={(e) => setCountry(e.target.value)}
-            className={styles.inputField}
+            className="inputField"
           />
         </Form.Group>
-        <Button type="submit" variant="primary" className={styles.formButton}>
+        <Button type="submit" variant="primary" className="formButton">
           Continue
         </Button>
       </Form>

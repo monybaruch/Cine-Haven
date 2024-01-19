@@ -1,7 +1,6 @@
 import { Row, Col, Button, ListGroup, Card, Image } from 'react-bootstrap';
 import { useCreateOrderMutation } from '../slices/orderSlice';
 import { useSelector, useDispatch } from 'react-redux';
-import styles from '../assets/styles/form.module.css';
 import { useNavigate, Link } from 'react-router-dom';
 import { clearCartItems } from '../slices/cartSlice';
 import { toast } from 'react-toastify';
@@ -39,8 +38,7 @@ const PlaceOrderPage = () => {
         totalPrice: cart.totalPrice,
       }).unwrap();
       dispatch(clearCartItems());
-      console.log(res._id);
-      // navigate(`/orders/${res._id}`);
+      console.log(res);
     } catch (err) {
       toast.error(err);
     }
@@ -52,7 +50,7 @@ const PlaceOrderPage = () => {
         <Col md={8}>
           <ListGroup variant="flush">
             <ListGroup.Item>
-              <h3 className={styles.formTitle}>Shipping:</h3>
+              <h3 className="formTitle">Shipping:</h3>
               <p>
                 <strong>Address:</strong>
                 {cart.shippingAddress.address},{cart.shippingAddress.city},{cart.shippingAddress.postalCode},
@@ -60,14 +58,14 @@ const PlaceOrderPage = () => {
               </p>
             </ListGroup.Item>
             <ListGroup.Item>
-              <h3 className={styles.formTitle}>Payment Method:</h3>
+              <h3 className="formTitle">Payment Method:</h3>
               <p>
                 <strong>Method:</strong>
                 {cart.paymentMethod}
               </p>
             </ListGroup.Item>
             <ListGroup.Item>
-              <h3 className={styles.formTitle}>Order Items:</h3>
+              <h3 className="formTitle">Order Items:</h3>
               {cart.cartItems.length === 0 ? (
                 <p>
                   <strong>Your cart is empty!</strong>
@@ -98,7 +96,7 @@ const PlaceOrderPage = () => {
           <Card>
             <ListGroup variant="flush">
               <ListGroup.Item>
-                <h3 className={styles.formTitle}>Order Summary:</h3>
+                <h3 className="formTitle">Order Summary:</h3>
                 <ListGroup.Item>
                   <Row>
                     <Col>Items:</Col>
@@ -120,7 +118,7 @@ const PlaceOrderPage = () => {
                 <ListGroup.Item>
                   <Button
                     type="button"
-                    className={styles.formButton}
+                    className="formButton"
                     disabled={cart.cartItems.length === 0}
                     onClick={placeOrderHandler}
                   >
