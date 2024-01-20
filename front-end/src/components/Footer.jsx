@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer>
       <Row>
-        <Col className="text-center py-3 primary-color text-light">
+        <Col className="text-center py-2 primary-color text-light">
           <h5>Created by Mony Baruch , Copyright &copy; {Year}, All Rights Reserved</h5>
         </Col>
       </Row>

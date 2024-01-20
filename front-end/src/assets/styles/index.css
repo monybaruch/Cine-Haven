@@ -1,7 +1,6 @@
-main {
-  min-height: 80vh;
+.main {
+  min-height: 82vh;
 }
-
 .primary-color {
   background-color: #3498db;
 }
