@@ -25,7 +25,10 @@ const PlaceOrderPage = () => {
     try {
       const orderItems = cart.cartItems.map((item) => {
         return {
+          title: item.title,
           quantity: item.quantity,
+          image: item.image,
+          price: item.price,
           bluray: item._id,
         };
       });

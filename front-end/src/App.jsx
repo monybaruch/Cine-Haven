@@ -1,4 +1,5 @@
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
+import { PayPalScriptProvider } from '@paypal/react-paypal-js';
 import PrivateRoute from './components/PrivateRoute.jsx';
 import PlaceOrderPage from './pages/PlaceOrderPage.jsx';
 import SharedLayout from './components/SharedLayout';
@@ -35,7 +36,9 @@ const router = createBrowserRouter(
 function App() {
   return (
     <Provider store={store}>
-      <RouterProvider router={router} />
+      <PayPalScriptProvider deferLoading={true}>
+        <RouterProvider router={router} />
+      </PayPalScriptProvider>
     </Provider>
   );
 }

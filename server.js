@@ -39,6 +39,8 @@ app.use('/blurays', bluraysRoutes);
 app.use('/orders', orderRoutes);
 app.use('/users', userRoutes);
 
+app.get('/config/paypal', (req, res) => res.send({ clientId: process.env.PAYPAL_CLIENT_ID }));
+
 app.get('/', (req, res) => {
   res.send('API is running....');
 });
