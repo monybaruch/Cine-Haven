@@ -5,13 +5,14 @@ import SharedLayout from './components/SharedLayout';
 import DeliveryPage from './pages/DeliveryPage.jsx';
 import PaymentPage from './pages/PaymentPage.jsx';
 import RegisterPage from './pages/RegisterPage';
+import OrderPage from './pages/OrderPage.jsx';
 import LoginPage from './pages/LoginPage.jsx';
 import BlurayPage from './pages/BlurayPage';
 import HomePage from './pages/HomePage.jsx';
 import CartPage from './pages/CartPage.jsx';
 import { Provider } from 'react-redux';
 import store from './store.js';
-import OrderPage from './pages/OrderPage.jsx';
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<SharedLayout />}>
@@ -25,7 +26,7 @@ const router = createBrowserRouter(
         <Route path="/shipping" element={<DeliveryPage />} />
         <Route path="/payment" element={<PaymentPage />} />
         <Route path="/placeorder" element={<PlaceOrderPage />} />
-        <Route path="/order" element={<OrderPage />} />
+        <Route path="/orders/:id" element={<OrderPage />} />
       </Route>
     </Route>
   )

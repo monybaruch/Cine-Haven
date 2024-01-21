@@ -38,7 +38,7 @@ const PlaceOrderPage = () => {
         totalPrice: cart.totalPrice,
       }).unwrap();
       dispatch(clearCartItems());
-      console.log(res);
+      navigate(`/orders/${res._id}`);
     } catch (err) {
       toast.error(err);
     }
@@ -46,7 +46,7 @@ const PlaceOrderPage = () => {
 
   return (
     <>
-      <Row>
+      <Row className="py-2">
         <Col md={8}>
           <ListGroup variant="flush">
             <ListGroup.Item>
