@@ -9,7 +9,7 @@ import { useState, useEffect } from 'react';
 const PaymentPage = () => {
   const cart = useSelector((state) => state.cart);
   const { shippingAddress } = cart;
-
+  //setting up paypal
   const [paymentMethod, setPaymentMethod] = useState('PayPal');
 
   const dispatch = useDispatch();
